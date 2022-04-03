@@ -34,7 +34,6 @@ class Game:
     def reset(self):
         if self.reset_button.check_mouse_click() :
             self._init()
-            print('reset')
 
         
     def draw_text(self):
