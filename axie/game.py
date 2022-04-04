@@ -134,6 +134,9 @@ class Game:
             self.used = 0
             self.destroyed = 0
             print(self.energy_history)
+
+            
+        
                     
     def update(self):
         self.win.fill(WHITE)

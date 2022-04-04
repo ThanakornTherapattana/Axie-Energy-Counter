@@ -1,4 +1,5 @@
 import pygame
+from .constants import CLICK_SOUND
 
 
 class Button:
@@ -20,6 +21,8 @@ class Button:
             if pygame.mouse.get_pressed()[0] == 1 and self.clicked == False :
                 action = True
                 self.clicked = True
+                CLICK_SOUND.play()
+                
                 
         if pygame.mouse.get_pressed()[0] == 0 :
             self.clicked = False
