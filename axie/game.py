@@ -1,7 +1,7 @@
 import pygame
 from .button import Button
 from .constants import (WHITE, BACKGROUND, RESET_BUTTON, NEXT_BUTTON, UNDO_BUTTON, ENERGY_NAME_FONT, 
-                        PLUS_BUTTON, MINUS_BUTTON, ENERGY_FONT, WIDTH, BLACK, OTHER_ENERGY_FONT)
+                        PLUS_BUTTON, MINUS_BUTTON, ENERGY_FONT, WIDTH, BLACK, OTHER_ENERGY_FONT, ENERGY_IMG)
 
 
 
@@ -42,22 +42,22 @@ class Game:
         self.win.blit(energy_text,(WIDTH//2 - energy_text.get_width()//2, 45))
         
         #round
-        round_text = ENERGY_NAME_FONT.render('ROUND ' + f"{self.round}", 1, WHITE)
+        round_text = ENERGY_NAME_FONT.render('ROUND ' + f"{self.round}", 1, BLACK)
         self.win.blit(round_text,(WIDTH//2 - round_text.get_width()//2, 10))
         
         #energy number
-        used_energy_text = OTHER_ENERGY_FONT.render(f"{self.used}", 1, WHITE)
-        gained_energy_text = OTHER_ENERGY_FONT.render(f"{self.gained}", 1, WHITE)
-        destroyed_energy_text = OTHER_ENERGY_FONT.render(f"{self.destroyed}", 1, WHITE)
+        used_energy_text = OTHER_ENERGY_FONT.render(f"{self.used}", 1, BLACK)
+        gained_energy_text = OTHER_ENERGY_FONT.render(f"{self.gained}", 1, BLACK)
+        destroyed_energy_text = OTHER_ENERGY_FONT.render(f"{self.destroyed}", 1, BLACK)
         
         self.win.blit(used_energy_text,(WIDTH//2 - used_energy_text.get_width()//2, 30*5))
         self.win.blit(gained_energy_text,(WIDTH//2 - gained_energy_text.get_width()//2, 44*5))
         self.win.blit(destroyed_energy_text,(WIDTH//2 - destroyed_energy_text.get_width()//2, 58*5))
         
         #energy name
-        used_energy_text_n = ENERGY_NAME_FONT.render("USED", 1, WHITE)
-        gained_energy_text_n = ENERGY_NAME_FONT.render("GAINED", 1, WHITE)
-        destroyed_energy_text_n = ENERGY_NAME_FONT.render("DESTROYED", 1, WHITE)
+        used_energy_text_n = ENERGY_NAME_FONT.render("USED", 1, BLACK)
+        gained_energy_text_n = ENERGY_NAME_FONT.render("GAINED", 1, BLACK)
+        destroyed_energy_text_n = ENERGY_NAME_FONT.render("DESTROYED", 1, BLACK)
         
         self.win.blit(used_energy_text_n,(WIDTH//2 - used_energy_text_n.get_width()//2, 26*5))
         self.win.blit(gained_energy_text_n,(WIDTH//2 - gained_energy_text_n.get_width()//2, 40*5))
@@ -136,7 +136,8 @@ class Game:
             print(self.energy_history)
                     
     def update(self):
-        self.win.blit(BACKGROUND, (0,0))
+        self.win.fill(WHITE)
+        self.win.blit(ENERGY_IMG, (22*5, 6*5))
         self.draw_button()
         self.draw_text()
         

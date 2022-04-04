@@ -9,6 +9,9 @@ BLACK = (0,0,0)
 BACKGROUND = pygame.image.load('assets/back_beta.png')
 BACKGROUND = pygame.transform.scale(BACKGROUND, (WIDTH, HEIGHT))
 
+ENERGY_IMG = pygame.image.load('assets/energy.png')
+ENERGY_IMG = pygame.transform.scale(ENERGY_IMG, (16*5, 16*5))
+
 RESET_BUTTON = pygame.image.load('assets/reset_button.png')
 NEXT_BUTTON = pygame.image.load('assets/next_button.png')
 UNDO_BUTTON = pygame.image.load('assets/undo_button.png')
